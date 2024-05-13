@@ -31,10 +31,8 @@ Train the model, save it, evaluate its performance, and visualize training/valid
 
 
 ## PROGRAM
-
-### Name:NIVETHA .K 
-
-### Register Number:212222230102
+ Name:NIVETHA .K 
+ Register Number:212222230102
 ```
 # to share the GPU resources for multiple sessions
 import tensorflow as tf
