@@ -34,7 +34,6 @@ Train the model, save it, evaluate its performance, and visualize training/valid
  Name:NIVETHA .K 
  Register Number:212222230102
 ```
-# to share the GPU resources for multiple sessions
 import tensorflow as tf
 from tensorflow.compat.v1.keras.backend import set_session
 config = tf.compat.v1.ConfigProto()
@@ -43,7 +42,8 @@ config.log_device_placement = True # to log device placement (on which device th
 sess = tf.compat.v1.Session(config=config)
 set_session(sess)
 %matplotlib inline
-
+```
+```
 import os
 import pandas as pd
 import numpy as np
@@ -55,7 +55,8 @@ from tensorflow import keras
 from tensorflow.keras import layers
 from tensorflow.keras import utils
 from tensorflow.keras import models
-
+```
+```
 my_data_dir = './dataset/cell_images'
 os.listdir(my_data_dir)
 test_path = my_data_dir+'/test/'
@@ -78,7 +79,8 @@ for image_filename in os.listdir(test_path+'/uninfected'):
     dim2.append(d2)
 
 sns.jointplot(x=dim1,y=dim2)
-
+```
+```
 image_shape = (130,130,3)
 help(ImageDataGenerator)
 image_gen = ImageDataGenerator(rotation_range=20, # rotate the image 20 degrees
@@ -92,7 +94,8 @@ image_gen = ImageDataGenerator(rotation_range=20, # rotate the image 20 degrees
                               )
 image_gen.flow_from_directory(train_path)
 image_gen.flow_from_directory(test_path)
-
+```
+```
 from tensorflow import keras
 from tensorflow.keras import layers
 model = keras.Sequential()
